@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #06080F;
+    font-family: SF Pro Display, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-evenly;
+    align-items: center;
+    height: 6rem;
+    padding: 2rem 2rem;
+    font-size: 24px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav-left {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+} 
+
+.logo {
+    background-color: #ffffff;
+    border-radius: 20%;
+    height: 65px;
+    width: 65px;
+}
+
+.nav-right {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.home-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    gap: 1rem;
+}
+
+.home-section h1, h2{
+    font-size: 75px;
+    margin: 0;
+    padding: 0;
+}   
+
+.home-section h2 {
+    font-weight: lighter;
+}
+
+.home-section p {
+    color: #FEED44;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.games-section {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    position: relative; /* Position relative for absolute positioning of cards */
+}
+
+.card {
+    background: linear-gradient(90deg, #16D4FF, #1774FF);
+    border-radius: 15px;
+    width: 300px;
+    height: 400px;
+    position: absolute; /* Position absolute for stacking */
+}
+
+.card-left {
+    background: linear-gradient(90deg, #BD5068, #9B111F);
+    left: -10px; /* Adjust position to the left */
+    top: 35px;
+    z-index: -1; /* Ensure it is behind the center card */
+    transform: rotate(15deg); /* Tilt to the left */
+
+}
+
+.card-right {
+    background: linear-gradient(90deg, #FABE4E, #272A1F);
+    right: -10px; /* Adjust position to the right */
+    top: 35px;
+    z-index: -1; /* Ensure it is behind the center card */
+    transform: rotate(-15deg); /* Tilt to the left */
+}
