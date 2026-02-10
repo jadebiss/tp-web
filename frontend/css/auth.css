@@ -1,0 +1,65 @@
+body {
+    font-family: Arial;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.auth-section {
+    background:white;
+    padding:30px;
+    width:320px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+
+.toggle {
+    display:flex;
+    margin-bottom:20px;
+}
+
+.toggle-btn {
+    flex:1;
+    padding:10px;
+    border:none;
+    cursor:pointer;
+    background:#ddd;
+}
+
+.toggle-btn.active {
+    background:#4CAF50;
+    color:white;
+}
+
+
+.form {
+    display:none;
+}
+
+
+.form.active {
+    display:block;
+}
+
+.form-group {
+    margin-bottom:15px;
+}
+
+input {
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+}
+
+button[type="submit"] {
+    width:100%;
+    padding:10px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
