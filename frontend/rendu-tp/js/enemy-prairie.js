@@ -25,8 +25,8 @@ class Enemy extends Entity {
         ctx.save();
         ctx.translate(this.x, this.y);
 
-        ctx.fillStyle = "red";
-        ctx.fillRect(-12, -12, 24, 24);
+        ctx.fillStyle = "green";
+        ctx.fillRect(-12, -1, 24, 24);
 
         ctx.restore();
     }

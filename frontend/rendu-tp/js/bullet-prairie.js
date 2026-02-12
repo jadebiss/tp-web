@@ -12,7 +12,7 @@ class Bullet extends Entity {
         this.game.entities.forEach(e => {
             if (e instanceof Enemy) {
                 let d = Math.hypot(e.x - this.x, e.y - this.y);
-                if (d < 15) {
+                if (d < 48) {
                     e.dead = true;
                     this.dead = true;
                     this.game.score += 10;
