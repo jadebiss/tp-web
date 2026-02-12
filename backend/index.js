@@ -5,27 +5,20 @@ const dotenv = require("dotenv");
 dotenv.config();
 const port = process.env.PORT || 5000;
 
+app.use(express.static("public"));
 
-app.use(express.static)
-
-
-
-
-
-
-
-
-// MongoDB connection
 const mongoUrl = "mongodb+srv://mmjadbis_db_user:1234@tp-web.wjsfo0r.mongodb.net/?appName=tp-web";
 const client = new MongoClient(mongoUrl);
 
 async function connectMongoDB() {
   try {
+    console.log("Attempting to connect to MongoDB...");
     await client.connect();
-    console.log("Connected to MongoDB!");
+    console.log("✓ Successfully connected to MongoDB!");
+    console.log("✓ BDD is now connected and ready!");
     return client.db("tp-web");
   } catch (error) {
-    console.error("MongoDB connection error:", error);
+    console.error("✗ MongoDB connection error:", error);
     process.exit(1);
   }
 }
@@ -38,5 +31,6 @@ app.get('/', (req, res) => {
 
 app.listen(port, async () => {
   db = await connectMongoDB();
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`\n🚀 Server is running at http://localhost:${port}`);
+  console.log(`📊 Database Status: CONNECTED\n`);
 });

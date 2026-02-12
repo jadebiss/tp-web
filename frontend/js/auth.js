@@ -18,3 +18,48 @@ toggleButtons.forEach(btn => {
     });
 });
 
+
+// ===== LOGIN =====
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    const res = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+    alert(data.message);
+
+});
+
+
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const email = document.getElementById("registerEmail").value;
+    const password = document.getElementById("registerPassword").value;
+    const confirm = document.getElementById("registerPasswordConfirm").value;
+
+    if (password !== confirm) {
+        alert("Les mots de passe ne correspondent pas");
+        return;
+    }
+
+    const res = await fetch("http://localhost:3000/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+    alert(data.message);
+
+});
+
