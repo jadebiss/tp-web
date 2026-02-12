@@ -3,6 +3,7 @@ class Enemy extends Entity {
     super(game, x, y);
     this.size = 40;      
     this.speed = 1;
+    this.bounce = 0;     
     this.bounceDir = 1;
   }
 
@@ -29,8 +30,6 @@ class Enemy extends Entity {
   draw(ctx){
     ctx.save();
     ctx.translate(this.x, this.y + this.bounce);
-
-    // Design du slime avec IA
 
     ctx.fillStyle = "lime";
     ctx.beginPath();

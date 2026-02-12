@@ -1,6 +1,3 @@
-/**
- * Classe du joueur (Prairie King)
- */
 class Player extends Entity {
     constructor(game, x, y) {
         super(game, x, y);
@@ -31,27 +28,75 @@ class Player extends Entity {
 
             this.dirX = moveX;
             this.dirY = moveY;
+
+            // Coldown pour éviter de spammer les flèches à corriger
+            this.shootCooldown = 0; 
+            this.shootDelay = 300;
         }
+
+        // Pour que le personnage reste dans les limites du canvas
+        const margin = 12;
+        this.x = Math.max(margin, Math.min(this.x, this.game.canvas.width - margin));
+        this.y = Math.max(margin, Math.min(this.y, this.game.canvas.height - margin));
+
 
         this.angle = Math.atan2(this.dirY, this.dirX);
     }
 
     shoot() {
         this.game.entities.push(
-            new Bullet(this.game, this.x, this.y, this.angle)
+            new Arrow(this.game, this.x, this.y, this.angle)
         );
     }
 
+    // Design du personnage avec L'IA
     draw(ctx) {
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.rotate(this.angle);
 
-        ctx.fillStyle = "yellow";
-        ctx.fillRect(-10, -10, 20, 20);
+        ctx.fillStyle = "#FFD700";
+        ctx.beginPath();
+        ctx.arc(0, -6, 12, Math.PI, 2*Math.PI); 
+        ctx.fill();
+
+        ctx.fillStyle = "#FFDAB9"; 
+        ctx.beginPath();
+        ctx.moveTo(-12, -2);
+        ctx.lineTo(-20, -10);
+        ctx.lineTo(-12, 4);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(12, -2);
+        ctx.lineTo(20, -10); 
+        ctx.lineTo(12, 4);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = "#FFDAB9";
+        ctx.beginPath();
+        ctx.arc(0, 0, 12, 0, Math.PI*2);
+        ctx.fill();
+
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(-4, -2, 3, 0, Math.PI*2); 
+        ctx.arc(4, -2, 3, 0, Math.PI*2);  
+        ctx.fill();
 
         ctx.fillStyle = "black";
-        ctx.fillRect(0, -2, 15, 4);
+        ctx.beginPath();
+        ctx.arc(-4, -2, 1.5, 0, Math.PI*2); 
+        ctx.arc(4, -2, 1.5, 0, Math.PI*2);  
+        ctx.fill();
+
+        ctx.strokeStyle = "#8B4513";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(0, 2, 18, Math.PI*0.2, Math.PI*1.8, true);
+        ctx.stroke();
 
         ctx.restore();
     }

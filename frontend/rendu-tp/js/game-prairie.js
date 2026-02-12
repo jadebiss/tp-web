@@ -94,9 +94,15 @@ class Game {
     drawMenu() {
         this.ctx.fillStyle = "white";
         this.ctx.font = "40px Pixelify Sans";
+        this.ctx.lineWidth = 7;
+        this.ctx.strokeStyle = "black";
+        this.ctx.strokeText("Slime Dungeon", 230, 200);
+
+        this.ctx.fillStyle = "white";
         this.ctx.fillText("Slime Dungeon", 230, 200);
+
         this.ctx.font = "20px Pixelify Sans";
-        this.ctx.fillText("Appuyez sur Entrée pour commencer", 190, 300);
+        this.ctx.fillText("Appuyez sur Entrée pour commencer", 190, 250);
         this.ctx.fillStyle = "black";
     }
 
