@@ -1,5 +1,7 @@
 ## Description
 
+En solo : Jade BISSESSUR
+
 SLIME DUNGEON est mon premier jeu Canvas, inspiré de Journey of the Prairie King de Stardew Valley. Le joueur incarne un petit elfe armé d’un arc. Le but est de tirer des flèches sur les ennemis et de survivre jusqu’à la fin du niveau. Il faut tuer tout les monstres présents sur la map avant de passer au niveau suivant.
 
 Référence du jeu : [Vidéo YouTube](https://www.youtube.com/watch?v=sJ8pIpVnKns&t=203s&pp=ygUbam91cm5leSBvZiB0aGUgcHJhaXJpZSBraW5n)
