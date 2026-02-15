@@ -14,6 +14,17 @@ class Input {
                     game.score = 0;
                     game.lives = 4;
                     game.entities = [];
+                    game.level = 1;
+                    game.levelTimer = game.levelTimes[0];
+                    game._scoreSaved = false;
+                } else if (game.state === "VICTORY") {
+                    game.state = "MENU";
+                    game.score = 0;
+                    game.lives = 4;
+                    game.entities = [];
+                    game.level = 1;
+                    game.levelTimer = game.levelTimes[0];
+                    game._scoreSaved = false;
                 }
             }
 

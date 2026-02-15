@@ -20,7 +20,7 @@ class Enemy extends Entity {
     if(dist < collisionRadius){
       this.dead = true;
       this.game.lives--;
-      if(this.game.lives < 0) this.game.state = "GAMEOVER";
+      if(this.game.lives <= 0) this.game.endGame("GAMEOVER");
     }
 
     this.bounce += this.bounceDir * 0.1;
